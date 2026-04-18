@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-blue: #0EA5E9;
+  --color-secondary-green: #10B981;
+  --color-bg-main: #FFFFFF;
+  --color-bg-offset: #F4F6F8;
+  --color-urgent-red: #EF4444;
+  --color-pending-yellow: #F59E0B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg-offset);
+  color: #1F2937;
+}
+
+/* Touch-optimized buttons */
+button, .btn {
+  min-height: 44px;
+  min-width: 44px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:active, .btn:active {
+  transform: scale(0.98);
+}
+
+/* Form inputs */
+input, textarea, select {
+  min-height: 44px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary-blue);
+  border-width: 2px;
+}
+
+/* Card components */
+.card {
+  background: var(--color-bg-main);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-submitted {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.status-acknowledged {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.status-en_route {
+  background-color: #E0E7FF;
+  color: #3730A3;
+}
+
+.status-resolved {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+/* SLA indicators */
+.sla-normal {
+  color: #10B981;
+}
+
+.sla-warning {
+  color: #F59E0B;
+}
+
+.sla-escalated {
+  color: #EF4444;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--color-primary-blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
